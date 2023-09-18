@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation=
+                "http://www.springframework.org/schema/beans
+                  https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <beans profile="eu">
+        <bean class="org.example.entities.Continent" id="europe">
+            <property name="name" value="Europe"/>
+        </bean>
+
+        <bean class="org.example.entities.Country" id="ireland">
+            <property name="name" value="Ireland"/>
+            <property name="capital" value="Dublin"/>
+            <property name="pop" value="7"/>
+            <property name="continent" ref="europe"/>
+        </bean>
+
+        <bean class="org.example.entities.Country" id="spain">
+            <constructor-arg value="Spain"/>
+            <constructor-arg value="Madrid"/>
+            <constructor-arg value="24"/>
+            <constructor-arg ref="europe"/>
+        </bean>
+
+        <bean class="org.example.entities.Country" id="france">
+            <property name="name" value="France"/>
+            <property name="capital" value="Paris"/>
+            <property name="pop" value="24"/>
+            <property name="continent" ref="europe"/>
+        </bean>
+
+    </beans>
+
+
+    <beans profile="af">
+        <bean class="org.example.entities.Continent" id="africa">
+            <property name="name" value="Africa"/>
+        </bean>
+
+        <bean class="org.example.entities.Country" id="nigeria">
+            <property name="name" value="Nigeria"/>
+            <property name="capital" value="Abuja"/>
+            <property name="pop" value="213"/>
+            <property name="continent" ref="africa"/>
+        </bean>
+
+        <bean class="org.example.entities.Country" id="egypt">
+            <property name="name" value="Egypt"/>
+            <property name="capital" value="Cairo"/>
+            <property name="pop" value="200"/>
+            <property name="continent" ref="africa"/>
+        </bean>
+
+    </beans>
+
+
+</beans>
